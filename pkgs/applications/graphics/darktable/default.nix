@@ -53,16 +53,16 @@
 , libaom
 , portmidi
 , fetchpatch
-, lua
+, lua5_4
 }:
 
 stdenv.mkDerivation rec {
-  version = "3.8.1";
+  version = "4.0.0";
   pname = "darktable";
 
   src = fetchurl {
     url = "https://github.com/darktable-org/darktable/releases/download/release-${version}/darktable-${version}.tar.xz";
-    sha256 = "1xmyn9haagizh8qqg91bm1lx3dq1v8failxj943mipnvaj80dvl1";
+    sha256 = "0bfcag6bj5vcmg4z4xjirs43iafcx89al6jl41i5mrhpjzszh5hl";
   };
 
   nativeBuildInputs = [ cmake ninja llvm_13 pkg-config intltool perl desktop-file-utils wrapGAppsHook ];
@@ -105,7 +105,7 @@ stdenv.mkDerivation rec {
     libheif
     libaom
     portmidi
-    lua
+    lua5_4
   ] ++ lib.optionals stdenv.isLinux [
     colord
     colord-gtk
